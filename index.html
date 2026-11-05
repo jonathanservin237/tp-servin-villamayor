@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorador de Ubicaciones · Rick and Morty</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="encabezado-contenido">
+        <h1>Explorador de Ubicaciones</h1>
+        <p>Busca ubicaciones, planetas y dimensiones del universo de Rick and Morty.</p>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <form id="formulario-busqueda" class="formulario" role="search">
+        <div class="formulario-grupo">
+          <label for="campo-nombre">Nombre de la ubicación</label>
+          <input
+            type="search"
+            id="campo-nombre"
+            name="nombre"
+            placeholder="Ej: Earth, Citadel, Anatomy Park"
+            autocomplete="off"
+            maxlength="40"
+          />
+        </div>
+
+        <div class="formulario-grupo">
+          <label for="campo-tipo">Tipo de ubicación</label>
+          <input
+            type="text"
+            id="campo-tipo"
+            name="tipo"
+            placeholder="Ej: Planet, Space station, Microverse"
+            autocomplete="off"
+            maxlength="40"
+          />
+        </div>
+
+        <div class="formulario-acciones">
+          <button type="submit" id="boton-buscar">Buscar</button>
+        </div>
+      </form>
+
+      <!-- Contador de resultados -->
+      <p id="contador-resultados" class="contador" hidden role="status" aria-live="polite"></p>
+
+      <!-- Mensaje de estado -->
+      <p id="mensaje-estado" class="mensaje" role="status" aria-live="polite">
+        Ingresa un nombre o tipo y presiona «Buscar».
+      </p>
+
+      <section id="contenedor-resultados" class="resultados" aria-label="Resultados de la búsqueda"></section>
+    </main>
+
+    <footer class="pie">
+      <p>Desarrollado por [Tu Nombre y Apellido] · Fundamentos de Desarrollo Web (2026)</p>
+      <p>
+        Fuente de datos:
+        <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">The Rick and Morty API</a>
+      </p>
+    </footer>
+  </body>
+</html>
