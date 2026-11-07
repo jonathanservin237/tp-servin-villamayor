@@ -1,1 +1,255 @@
+:root {
+  --color-fondo: #f4f5f7;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2933;
+  --color-secundario: #52606d;
+  --color-principal: #1d4ed8;
+  --color-principal-hover: #1e40af;
+  --color-borde: #d2d6dc;
+  --color-error: #b91c1c;
+  --radio: 12px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.encabezado {
+  background: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.encabezado-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: var(--color-principal);
+}
+
+.encabezado p {
+  margin: 0;
+  color: var(--color-secundario);
+  font-size: 0.95rem;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+  width: 100%;
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--color-superficie);
+  padding: 20px;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.formulario-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formulario-grupo:nth-child(3) {
+  grid-column: span 2;
+}
+
+.formulario label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  transition: border-color 0.2s;
+}
+
+.formulario input:focus-visible {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.formulario-acciones {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formulario button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radio);
+  background: var(--color-principal);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.formulario button:hover {
+  background: var(--color-principal-hover);
+}
+
+.formulario button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ---------- Contador y Mensajes ---------- */
+.contador {
+  max-width: 700px;
+  margin: 0 auto 12px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-principal);
+  font-size: 0.95rem;
+}
+
+.mensaje {
+  max-width: 700px;
+  margin: 0 auto 16px;
+  text-align: center;
+  color: var(--color-secundario);
+}
+
+.mensaje.error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* ---------- Tarjetas (Grid & Flexbox) ---------- */
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  padding: 18px;
+  border: 1px solid var(--color-borde);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: var(--color-principal);
+  border-bottom: 2px solid var(--color-fondo);
+  padding-bottom: 8px;
+}
+
+.tarjeta dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.tarjeta dt {
+  color: var(--color-secundario);
+  font-weight: 500;
+}
+
+.tarjeta dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: var(--color-superficie);
+  border-top: 1px solid var(--color-borde);
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-secundario);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pie p {
+  margin: 0;
+}
+
+.pie a {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+
+.pie a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive para celulares (375px) ---------- */
+@media (max-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+  .formulario-grupo:nth-child(3),
+  .formulario-acciones {
+    grid-column: span 1;
+  }
+  .formulario-acciones {
+    justify-content: stretch;
+  }
+  .formulario button {
+    width: 100%;
+  }
+}
